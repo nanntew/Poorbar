@@ -1,154 +1,469 @@
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>باربری پربار</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>باربری پربار | حمل‌ونقل سریع، ایمن و مطمئن از تهران به سراسر ایران</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
 <body>
 
-<div id="loader">
-  <div class="loader-text">PORBAR</div>
-</div>
-
-<a href="tel:09122272869" class="floating-call">📞</a>
-
-<header class="navbar glass">
-  <div class="logo">
-    <h2>باربری <span>پربار</span></h2>
-    <p>حمل بار از تهران به سراسر ایران</p>
-  </div>
-
-  <nav>
-    <a href="#">خانه</a>
-    <a href="#about">درباره ما</a>
-    <a href="#services">خدمات</a>
-    <a href="#contact">تماس با ما</a>
-  </nav>
-
-  <a href="tel:09122272869" class="call-btn">تماس فوری</a>
-</header>
-
-<section class="hero">
-  <div class="hero-content">
-    <h1>باربری پربار</h1>
-    <h2>حمل‌ونقل سریع، ایمن و مطمئن</h2>
-    <h3>از تهران به سراسر ایران</h3>
-
-    <p>
-      بار شما برای ما فقط یک محموله نیست؛ اعتماد شماست.
-      با سال‌ها تجربه، حمل بار شهری و بین شهری را با بهترین کیفیت انجام می‌دهیم.
-    </p>
-
-    <div class="hero-buttons">
-      <a href="tel:09122272869" class="btn primary">تماس فوری</a>
-      <a href="#services" class="btn secondary">خدمات ما</a>
+  <!-- ===== LOADER ===== -->
+  <div id="loader">
+    <div class="loader-inner">
+      <div class="loader-truck">
+        <i class="fas fa-truck-moving"></i>
+      </div>
+      <div class="loader-bar"><div class="loader-fill"></div></div>
+      <p>در حال بارگذاری...</p>
     </div>
   </div>
-</section>
 
-<section class="features">
-  <div class="card glass">🛡️ امنیت کامل بار</div>
-  <div class="card glass">⚡ ارسال سریع</div>
-  <div class="card glass">🎧 پشتیبانی 24/7</div>
-  <div class="card glass">💎 کیفیت برتر</div>
-</section>
+  <!-- ===== FLOATING CALL BUTTON ===== -->
+  <a href="tel:02155297795" class="float-call" aria-label="تماس فوری">
+    <i class="fas fa-phone-alt"></i>
+    <span class="float-call-label">تماس فوری</span>
+  </a>
 
-<section class="about" id="about">
-  <div class="about-content glass">
-    <h2>چرا باربری پربار؟</h2>
-    <p>
-      باربری پربار با بیش از یک دهه سابقه درخشان در حوزه حمل‌ونقل،
-      آماده ارائه خدمات باربری شهری و شهرستان با بالاترین کیفیت است.
-    </p>
-
-    <ul>
-      <li>✔ تیم حرفه‌ای و باتجربه</li>
-      <li>✔ حمل ایمن و مطمئن</li>
-      <li>✔ پشتیبانی کامل</li>
-      <li>✔ قیمت منصفانه</li>
-    </ul>
-  </div>
-</section>
-
-<section class="services" id="services">
-  <h2>خدمات ما</h2>
-
-  <div class="services-grid">
-
-    <div class="service-card glass">
-      <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=1200&auto=format&fit=crop">
-      <h3>باربری شهری</h3>
+  <!-- ===== NAVBAR ===== -->
+  <header id="navbar">
+    <div class="container nav-inner">
+      <div class="logo">
+        <i class="fas fa-truck-moving logo-icon"></i>
+        <div>
+          <span class="logo-main">باربری پربار</span>
+          <span class="logo-sub">حمل مطمئن از تهران به سراسر ایران</span>
+        </div>
+      </div>
+      <nav class="nav-links">
+        <a href="#home" class="active">خانه</a>
+        <a href="#services">خدمات</a>
+        <a href="#about">درباره ما</a>
+        <a href="#contact">تماس با ما</a>
+      </nav>
+      <a href="tel:02155297795" class="btn-nav-call">
+        <i class="fas fa-phone-alt"></i> تماس فوری
+      </a>
+      <button class="hamburger" id="hamburger" aria-label="منو">
+        <span></span><span></span><span></span>
+      </button>
     </div>
-
-    <div class="service-card glass">
-      <img src="https://images.unsplash.com/photo-1616432043562-3671ea2e5242?q=80&w=1200&auto=format&fit=crop">
-      <h3>باربری شهرستان</h3>
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="#home">خانه</a>
+      <a href="#services">خدمات</a>
+      <a href="#about">درباره ما</a>
+      <a href="#contact">تماس با ما</a>
+      <a href="tel:02155297795" class="btn-mobile-call"><i class="fas fa-phone-alt"></i> تماس فوری</a>
     </div>
+  </header>
 
-    <div class="service-card glass">
-      <img src="https://images.unsplash.com/photo-1553413077-190dd305871c?q=80&w=1200&auto=format&fit=crop">
-      <h3>اثاث کشی منزل</h3>
+  <!-- ===== HERO ===== -->
+  <section id="home" class="hero">
+    <div class="hero-bg">
+      <img src="https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?w=1600&q=80" alt="کامیون باربری" class="hero-img" />
+      <div class="hero-overlay"></div>
+      <div class="hero-particles" id="particles"></div>
     </div>
-
-    <div class="service-card glass">
-      <img src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?q=80&w=1200&auto=format&fit=crop">
-      <h3>حمل بار اداری</h3>
+    <div class="container hero-content">
+      <div class="hero-text reveal-hero">
+        <div class="hero-badge">
+          <i class="fas fa-star"></i> بیش از ۱۰ سال تجربه در حمل‌ونقل
+        </div>
+        <h1>
+          <span class="highlight">باربری</span> پربار
+        </h1>
+        <h2>حمل‌ونقل سریع، ایمن و مطمئن<br />از تهران به سراسر ایران</h2>
+        <p>با سال‌ها تجربه در حمل بار شهری و بین شهری، بار شما را با بهترین کیفیت و در کوتاه‌ترین زمان به مقصد می‌رسانیم.</p>
+        <div class="hero-actions">
+          <a href="tel:02155297795" class="btn btn-primary">
+            <i class="fas fa-phone-alt"></i> تماس با ما
+          </a>
+          <a href="#services" class="btn btn-ghost">
+            مشاهده خدمات <i class="fas fa-chevron-left"></i>
+          </a>
+        </div>
+        <div class="hero-socials">
+          <a href="#" class="social-pill"><i class="fas fa-phone-alt"></i> تماس</a>
+          <a href="https://wa.me/989122272869" class="social-pill green"><i class="fab fa-whatsapp"></i> واتساپ</a>
+        </div>
+      </div>
     </div>
-
-    <div class="service-card glass">
-      <img src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?q=80&w=1200&auto=format&fit=crop">
-      <h3>بسته‌بندی حرفه‌ای</h3>
+    <div class="hero-scroll-hint">
+      <span></span>
+      <p>اسکرول کنید</p>
     </div>
+  </section>
 
-    <div class="service-card glass">
-      <img src="https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?q=80&w=1200&auto=format&fit=crop">
-      <h3>سرویس ویژه</h3>
+  <!-- ===== FEATURES STRIP ===== -->
+  <section class="features-strip reveal">
+    <div class="container features-grid">
+      <div class="feature-card glass">
+        <div class="feature-icon"><i class="fas fa-shield-alt"></i></div>
+        <h3>امنیت کامل</h3>
+        <p>حمل کاملاً ایمن با بیمه کامل بار</p>
+      </div>
+      <div class="feature-card glass">
+        <div class="feature-icon"><i class="fas fa-bolt"></i></div>
+        <h3>ارسال سریع</h3>
+        <p>تحویل به موقع بار با بالاترین سرعت</p>
+      </div>
+      <div class="feature-card glass">
+        <div class="feature-icon"><i class="fas fa-headset"></i></div>
+        <h3>پشتیبانی ۲۴/۷</h3>
+        <p>پشتیبانی شبانه‌روزی در تمام مراحل حمل بار</p>
+      </div>
+      <div class="feature-card glass">
+        <div class="feature-icon"><i class="fas fa-gem"></i></div>
+        <h3>کیفیت برتر</h3>
+        <p>ارائه بهترین خدمات با استانداردهای روز دنیا</p>
+      </div>
     </div>
+  </section>
 
-  </div>
-</section>
-
-<section class="stats glass">
-  <div>+10 سال تجربه</div>
-  <div>+5000 مشتری راضی</div>
-  <div>+10000 حمل موفق</div>
-  <div>24/7 پشتیبانی</div>
-</section>
-
-<section class="cta glass">
-  <h2>برای حمل بار خود آماده‌اید؟</h2>
-  <a href="tel:09122272869" class="call-btn">تماس فوری</a>
-</section>
-
-<section class="contact" id="contact">
-  <h2>اطلاعات تماس</h2>
-
-  <div class="contact-grid">
-    <div class="contact-card glass">
-      <h3>شماره همراه</h3>
-      <a href="tel:09122272869">09122272869</a>
-      <a href="tel:09127657740">09127657740</a>
+  <!-- ===== ABOUT ===== -->
+  <section id="about" class="about reveal">
+    <div class="container about-inner">
+      <div class="about-media">
+        <div class="about-img-wrap">
+          <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=800&q=80" alt="کامیون پربار" />
+          <div class="about-badge-exp glass">
+            <span class="exp-num">+۱۰</span>
+            <span class="exp-label">سال تجربه</span>
+          </div>
+          <div class="about-play-btn">
+            <div class="play-ring"></div>
+            <i class="fas fa-play"></i>
+          </div>
+        </div>
+        <div class="about-map-dot">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/IranMapVector.svg/500px-IranMapVector.svg.png" alt="نقشه ایران" class="iran-map" />
+        </div>
+      </div>
+      <div class="about-text">
+        <span class="section-label">درباره ما</span>
+        <h2>چرا باربری <span class="highlight">پربار</span>؟</h2>
+        <p>باربری پربار با بیش از یک دهه سابقه درخشان در زمینه حمل و نقل بار شهری و بین شهری، همواره در تلاش است تا با ارائه خدماتی مطمئن، سریع و با کیفیت، رضایت کامل مشتریان خود را جلب نماید.</p>
+        <ul class="about-list">
+          <li><i class="fas fa-check-circle"></i> دارای مجوز رسمی و بیمه کامل بار</li>
+          <li><i class="fas fa-check-circle"></i> استفاده از ناوگان مجهز و مدرن</li>
+          <li><i class="fas fa-check-circle"></i> کادر مجرب و رانندگان حرفه‌ای</li>
+          <li><i class="fas fa-check-circle"></i> قیمت‌گذاری منصفانه و رقابتی</li>
+        </ul>
+        <a href="#contact" class="btn btn-primary">
+          <i class="fas fa-user"></i> بیشتر درباره ما
+        </a>
+      </div>
     </div>
+  </section>
 
-    <div class="contact-card glass">
-      <h3>شماره ثابت</h3>
-      <a href="tel:02155297795">02155297795</a>
+  <!-- ===== SERVICES ===== -->
+  <section id="services" class="services reveal">
+    <div class="container">
+      <div class="section-head">
+        <span class="section-label">خدمات ما</span>
+        <h2>خدمات حمل و نقل <span class="highlight">باربری پربار</span></h2>
+      </div>
+      <div class="services-grid">
+
+        <div class="service-card reveal-card">
+          <div class="service-img">
+            <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80" alt="باربری شهری" />
+            <div class="service-overlay">
+              <i class="fas fa-city"></i>
+            </div>
+          </div>
+          <div class="service-info glass">
+            <h3>باربری شهری</h3>
+            <p>حمل بار در تمام نقاط تهران با سریع‌ترین زمان</p>
+          </div>
+        </div>
+
+        <div class="service-card reveal-card">
+          <div class="service-img">
+            <img src="https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?w=600&q=80" alt="باربری شهرستان" />
+            <div class="service-overlay">
+              <i class="fas fa-road"></i>
+            </div>
+          </div>
+          <div class="service-info glass">
+            <h3>باربری شهرستان</h3>
+            <p>ارسال بار از تهران به تمام شهرهای ایران</p>
+          </div>
+        </div>
+
+        <div class="service-card reveal-card">
+          <div class="service-img">
+            <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=600&q=80" alt="اتاقکشی منزل" />
+            <div class="service-overlay">
+              <i class="fas fa-home"></i>
+            </div>
+          </div>
+          <div class="service-info glass">
+            <h3>اتاقکشی منزل</h3>
+            <p>جابه‌جایی حرفه‌ای و حمل ایمن اثاثیه منزل</p>
+          </div>
+        </div>
+
+        <div class="service-card reveal-card">
+          <div class="service-img">
+            <img src="https://images.unsplash.com/photo-1553413077-190dd305871c?w=600&q=80" alt="حمل بار اداری" />
+            <div class="service-overlay">
+              <i class="fas fa-building"></i>
+            </div>
+          </div>
+          <div class="service-info glass">
+            <h3>حمل بار اداری</h3>
+            <p>جابه‌جایی تجهیزات اداری با دقت و امنیت بالا</p>
+          </div>
+        </div>
+
+        <div class="service-card reveal-card">
+          <div class="service-img">
+            <img src="https://images.unsplash.com/photo-1566576912321-d58ddd7a6088?w=600&q=80" alt="بسته‌بندی حرفه‌ای" />
+            <div class="service-overlay">
+              <i class="fas fa-box"></i>
+            </div>
+          </div>
+          <div class="service-info glass">
+            <h3>بسته‌بندی حرفه‌ای</h3>
+            <p>استفاده از بهترین مواد بسته‌بندی جهت محافظت</p>
+          </div>
+        </div>
+
+        <div class="service-card reveal-card">
+          <div class="service-img">
+            <img src="https://images.unsplash.com/photo-1519003722824-194d4455a60c?w=600&q=80" alt="سرویس ویژه" />
+            <div class="service-overlay">
+              <i class="fas fa-star"></i>
+            </div>
+          </div>
+          <div class="service-info glass">
+            <h3>سرویس ویژه VIP</h3>
+            <p>حمل بارهای خاص و ارزشمند با سرویس VIP</p>
+          </div>
+        </div>
+
+      </div>
     </div>
+  </section>
 
-    <div class="contact-card glass">
-      <h3>آدرس</h3>
-      <p>تهران اتوبان ساوه پایانه بار بزرگ تهران پلاک 258</p>
+  <!-- ===== STATS ===== -->
+  <section class="stats reveal">
+    <div class="container stats-grid">
+      <div class="stat-item">
+        <div class="stat-icon"><i class="fas fa-trophy"></i></div>
+        <div class="stat-num" data-target="10">۰</div>
+        <div class="stat-plus">+</div>
+        <div class="stat-label">سال تجربه</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-icon"><i class="fas fa-users"></i></div>
+        <div class="stat-num" data-target="5000">۰</div>
+        <div class="stat-plus">+</div>
+        <div class="stat-label">مشتری راضی</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-icon"><i class="fas fa-truck-moving"></i></div>
+        <div class="stat-num" data-target="10000">۰</div>
+        <div class="stat-plus">+</div>
+        <div class="stat-label">حمل موفق</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-icon"><i class="fas fa-clock"></i></div>
+        <div class="stat-num" data-target="24">۰</div>
+        <div class="stat-slash">/۷</div>
+        <div class="stat-label">پشتیبانی</div>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<footer class="footer">
-  <h2>باربری پربار</h2>
-  <p>حمل مطمئن از تهران به سراسر ایران</p>
-</footer>
+  <!-- ===== TESTIMONIALS ===== -->
+  <section class="testimonials reveal">
+    <div class="container">
+      <div class="section-head">
+        <span class="section-label">نظرات مشتریان</span>
+        <h2>مشتریان راضی <span class="highlight">ما</span></h2>
+      </div>
+      <div class="testimonials-track" id="testimonialsTrack">
 
-<script src="script.js"></script>
+        <div class="testi-card glass">
+          <div class="testi-stars">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+          </div>
+          <p>بسیار خوب، فوق‌العاده عالی و مسئولیت‌پذیر. بار من بدون هیچ مشکلی و در زمان مقرر به مقصد رسید. تیم حرفه‌ای و پشتیبانی عالی.</p>
+          <div class="testi-author">
+            <div class="testi-avatar"><i class="fas fa-user"></i></div>
+            <div>
+              <strong>مجید رضایی</strong>
+              <span>مشتری تهران</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="testi-card glass">
+          <div class="testi-stars">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+          </div>
+          <p>بسته‌بندی بسیار عالی و وسایل کاملاً سالم رسید. از برخورد خوب و پیگیری تیم پربار واقعاً ممنونم.</p>
+          <div class="testi-author">
+            <div class="testi-avatar"><i class="fas fa-user"></i></div>
+            <div>
+              <strong>سمیرا احمدی</strong>
+              <span>مشتری شیراز</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="testi-card glass">
+          <div class="testi-stars">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+          </div>
+          <p>چندین بار از خدمات پربار استفاده کردم و همیشه راضی بودم. قیمت مناسب و کیفیت خدمات در سطح عالی.</p>
+          <div class="testi-author">
+            <div class="testi-avatar"><i class="fas fa-user"></i></div>
+            <div>
+              <strong>حسین کریمی</strong>
+              <span>مشتری مشهد</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="testi-card glass">
+          <div class="testi-stars">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+          </div>
+          <p>اتاق‌کشی منزل ما را با دقت و احترام انجام دادند. هیچ خسارتی به وسایل نرسید. کاملاً پیشنهاد می‌کنم.</p>
+          <div class="testi-author">
+            <div class="testi-avatar"><i class="fas fa-user"></i></div>
+            <div>
+              <strong>نرگس موسوی</strong>
+              <span>مشتری اصفهان</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <div class="testi-nav">
+        <button class="testi-btn" id="testiPrev"><i class="fas fa-chevron-right"></i></button>
+        <button class="testi-btn" id="testiNext"><i class="fas fa-chevron-left"></i></button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CTA BANNER ===== -->
+  <section class="cta-banner reveal">
+    <div class="cta-bg">
+      <img src="https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?w=1400&q=70" alt="bg" />
+      <div class="cta-overlay"></div>
+    </div>
+    <div class="container cta-content glass">
+      <div class="cta-text">
+        <h2>برای حمل بار خود آماده‌اید؟</h2>
+        <p>همین حالا با کارشناسان ما تماس بگیرید و از مشاوره رایگان بهره‌مند شوید.</p>
+      </div>
+      <div class="cta-actions">
+        <a href="tel:02155297795" class="btn btn-primary btn-lg">
+          <i class="fas fa-phone-alt"></i> تماس فوری
+        </a>
+        <div class="cta-number">
+          <span>۰۲۱ ۵۵۲۹ ۷۷۹۵</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CONTACT ===== -->
+  <section id="contact" class="contact reveal">
+    <div class="container">
+      <div class="section-head">
+        <span class="section-label">اطلاعات تماس</span>
+        <h2>با ما <span class="highlight">در تماس</span> باشید</h2>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-card glass">
+          <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+          <h3>آدرس</h3>
+          <p>تهران، اتوبان ساوه<br />پایانه بار بزرگ تهران، پلاک ۲۵</p>
+          <a href="#" class="contact-link"><i class="fas fa-directions"></i> مسیریابی</a>
+        </div>
+        <div class="contact-card glass">
+          <div class="contact-icon"><i class="fas fa-mobile-alt"></i></div>
+          <h3>شماره همراه</h3>
+          <p>۰۹۱۲ ۲۲۷ ۲۸۶۹</p>
+          <p>۰۹۱۲ ۷۶۵ ۷۷۴۰</p>
+          <a href="https://wa.me/989122272869" class="contact-link"><i class="fab fa-whatsapp"></i> واتساپ</a>
+        </div>
+        <div class="contact-card glass">
+          <div class="contact-icon"><i class="fas fa-phone-alt"></i></div>
+          <h3>شماره ثابت</h3>
+          <p>۰۲۱ ۵۵۲۹ ۷۷۹۵</p>
+          <a href="tel:02155297795" class="contact-link"><i class="fas fa-phone-alt"></i> تماس</a>
+        </div>
+        <div class="contact-card glass map-card">
+          <div class="contact-icon"><i class="fas fa-location-dot"></i></div>
+          <h3>پایانه بار بزرگ تهران</h3>
+          <div class="map-placeholder">
+            <i class="fas fa-map-marked-alt"></i>
+            <span>نقشه موقعیت</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <div class="logo">
+          <i class="fas fa-truck-moving logo-icon"></i>
+          <div>
+            <span class="logo-main">باربری پربار</span>
+            <span class="logo-sub">حمل مطمئن از تهران به سراسر ایران</span>
+          </div>
+        </div>
+        <p>باربری پربار با بیش از ۱۰ سال تجربه، خدمات حمل‌ونقل سریع، ایمن و مطمئن به سراسر کشور ارائه می‌دهد.</p>
+        <div class="footer-socials">
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-telegram"></i></a>
+          <a href="#"><i class="fab fa-whatsapp"></i></a>
+          <a href="#"><i class="fab fa-aparat"></i></a>
+        </div>
+      </div>
+      <div class="footer-links">
+        <h4>دسترسی سریع</h4>
+        <ul>
+          <li><a href="#home">خانه</a></li>
+          <li><a href="#about">درباره ما</a></li>
+          <li><a href="#services">خدمات</a></li>
+          <li><a href="#contact">تماس با ما</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h4>خدمات</h4>
+        <ul>
+          <li><a href="#">باربری شهری</a></li>
+          <li><a href="#">باربری شهرستان</a></li>
+          <li><a href="#">اتاقکشی منزل</a></li>
+          <li><a href="#">حمل بار اداری</a></li>
+        </ul>
+      </div>
+      <div class="footer-hours">
+        <h4>ساعات کاری</h4>
+        <ul>
+          <li><i class="fas fa-calendar-day"></i> شنبه تا چهارشنبه: ۸ صبح تا ۱۰ شب</li>
+          <li><i class="fas fa-calendar-day"></i> پنجشنبه: ۸ صبح تا ۸ عصر</li>
+          <li><i class="fas fa-phone-alt"></i> پشتیبانی ۲۴ ساعته، ۷ روز هفته</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© ۱۴۰۳ تمام حقوق این وب‌سایت متعلق به باربری پربار می‌باشد.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
