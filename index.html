@@ -159,70 +159,17 @@
         <div class="iran-map-section reveal">
           <div class="iran-map-wrap glass">
             <div class="map-title">پوشش سراسری ایران</div>
-            <svg class="iran-map" viewBox="0 0 500 420" xmlns="http://www.w3.org/2000/svg">
-              <!-- Recognizable Iran outline -->
-              <path d="M 130 55
-                       L 175 40 L 230 35 L 270 32 L 300 40 L 330 38
-                       L 360 48 L 385 60 L 400 80 L 405 100
-                       L 418 110 L 430 125 L 432 145 L 420 160
-                       L 425 178 L 415 195 L 418 215 L 405 230
-                       L 410 250 L 395 268 L 398 288 L 380 305
-                       L 365 320 L 345 330 L 335 350 L 312 360
-                       L 290 355 L 270 365 L 245 360 L 225 368
-                       L 200 358 L 178 362 L 160 345 L 138 340
-                       L 120 320 L 100 310 L 88 290 L 70 278
-                       L 60 258 L 65 235 L 50 215 L 55 192
-                       L 45 170 L 55 148 L 50 125 L 65 105
-                       L 75 85 L 95 70 L 130 55 Z"
-                fill="rgba(33,150,243,0.10)" stroke="#2196F3" stroke-width="2" stroke-linejoin="round"/>
-
-              <!-- Route lines from Tehran (drawn first, under dots) -->
-              <g stroke="#2196F3" stroke-width="1.2" stroke-dasharray="5 4" opacity="0.55">
-                <line x1="245" y1="155" x2="145" y2="155" class="route-line"/>
-                <line x1="245" y1="155" x2="345" y2="120" class="route-line"/>
-                <line x1="245" y1="155" x2="195" y2="245" class="route-line"/>
-                <line x1="245" y1="155" x2="140" y2="270" class="route-line"/>
-                <line x1="245" y1="155" x2="305" y2="245" class="route-line"/>
-                <line x1="245" y1="155" x2="345" y2="230" class="route-line"/>
-                <line x1="245" y1="155" x2="120" y2="195" class="route-line"/>
-              </g>
-
-              <!-- Tehran (origin, pulsing) -->
-              <circle cx="245" cy="155" r="9" fill="#2196F3">
-                <animate attributeName="r" values="9;13;9" dur="2s" repeatCount="indefinite"/>
-                <animate attributeName="opacity" values="1;0.6;1" dur="2s" repeatCount="indefinite"/>
-              </circle>
-              <circle cx="245" cy="155" r="4" fill="#fff"/>
-              <text x="225" y="138" fill="#ffffff" font-size="15" font-weight="700" font-family="Vazirmatn">تهران</text>
-
-              <!-- Tabriz -->
-              <circle cx="145" cy="155" r="5" fill="#64B5F6"/>
-              <text x="100" y="148" fill="#90CAF9" font-size="13" font-family="Vazirmatn">تبریز</text>
-
-              <!-- Mashhad -->
-              <circle cx="345" cy="120" r="5" fill="#64B5F6"/>
-              <text x="350" y="113" fill="#90CAF9" font-size="13" font-family="Vazirmatn">مشهد</text>
-
-              <!-- Isfahan -->
-              <circle cx="195" cy="245" r="5" fill="#64B5F6"/>
-              <text x="200" y="240" fill="#90CAF9" font-size="13" font-family="Vazirmatn">اصفهان</text>
-
-              <!-- Shiraz -->
-              <circle cx="140" cy="270" r="5" fill="#64B5F6"/>
-              <text x="90" y="290" fill="#90CAF9" font-size="13" font-family="Vazirmatn">شیراز</text>
-
-              <!-- Kerman -->
-              <circle cx="305" cy="245" r="5" fill="#64B5F6"/>
-              <text x="312" y="240" fill="#90CAF9" font-size="13" font-family="Vazirmatn">کرمان</text>
-
-              <!-- Ahvaz -->
-              <circle cx="120" cy="195" r="5" fill="#64B5F6"/>
-              <text x="55" y="190" fill="#90CAF9" font-size="13" font-family="Vazirmatn">اهواز</text>
-
-              <!-- Bandar Abbas -->
-              <circle cx="345" cy="230" r="5" fill="#64B5F6"/>
-              <text x="350" y="225" fill="#90CAF9" font-size="13" font-family="Vazirmatn">بندرعباس</text>
-            </svg>
+            <div class="iran-map-img-wrap">
+              <img src="images/iran-map.png" alt="نقشه پوشش حمل بار باربری پربار در سراسر ایران" class="iran-map-img" />
+              <span class="map-label" style="top:20%; left:21%;">تبریز</span>
+              <span class="map-label map-label-origin" style="top:37%; left:36%;">تهران</span>
+              <span class="map-label" style="top:61%; left:37%;">اصفهان</span>
+              <span class="map-label" style="top:70%; left:42%;">شیراز</span>
+              <span class="map-label" style="top:56%; left:74%;">مشهد</span>
+              <span class="map-label" style="top:66%; left:82%;">کرمان</span>
+              <span class="map-label" style="top:78%; left:71%;">اهواز</span>
+              <span class="map-label" style="top:88%; left:84%;">بندرعباس</span>
+            </div>
             <div class="map-caption">از تهران به همه‌جا — پوشش حمل بار به تمام شهرهای ایران</div>
           </div>
         </div>
@@ -429,7 +376,7 @@
           <div class="contact-icon">📍</div>
           <h4>آدرس</h4>
           <p>تهران، اتوبان ساوه<br/>پایانه بار بزرگ تهران<br/>پلاک ۲۵۸</p>
-          <a href="https://maps.google.com/?q=پایانه+بار+بزرگ+تهران" target="_blank" class="contact-link">
+          <a href="https://maps.app.goo.gl/cRSytAwG6fkfoZCp6?g_st=ic" target="_blank" rel="noopener" class="contact-link">
             <svg viewBox="0 0 24 24" fill="currentColor" width="14"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
             مسیریابی
           </a>
@@ -453,7 +400,7 @@
             شنبه تا پنج‌شنبه ۸ تا ۱۰ شب
           </div>
         </div>
-        <div class="contact-card glass map-card">
+        <a href="https://maps.app.goo.gl/cRSytAwG6fkfoZCp6?g_st=ic" target="_blank" rel="noopener" class="contact-card glass map-card">
           <div class="contact-icon">🗺️</div>
           <h4>پایانه بار بزرگ تهران</h4>
           <div class="map-placeholder">
@@ -462,7 +409,11 @@
             </div>
             <p>تهران، اتوبان ساوه<br/>پایانه بار بزرگ، پلاک ۲۵۸</p>
           </div>
-        </div>
+          <span class="map-open-btn">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="15"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+            مسیریابی در گوگل مپ
+          </span>
+        </a>
       </div>
     </div>
   </section>
