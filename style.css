@@ -86,6 +86,7 @@ ul { list-style: none; }
   transition: transform 0.2s;
 }
 .float-btn:hover { transform: scale(1.05); }
+.float-btn svg { width: 20px; height: 20px; flex-shrink: 0; }
 @keyframes pulse { 0%,100%{box-shadow:0 4px 30px rgba(33,150,243,0.5)} 50%{box-shadow:0 4px 50px rgba(33,150,243,0.85)} }
 
 /* ─── NAVBAR ─────────────────────────────────────────────────── */
@@ -249,9 +250,10 @@ ul { list-style: none; }
 .about-img-wrap { position: relative; border-radius: var(--radius-lg); overflow: hidden; }
 .about-img { width: 100%; height: 380px; object-fit: cover; border-radius: var(--radius-lg); }
 .about-badge-overlay {
-  position: absolute; bottom: 20px; right: 20px;
+  position: absolute; bottom: 20px; left: 20px;
   padding: 16px 22px; border-radius: var(--radius);
   text-align: center;
+  background: rgba(10,22,40,0.65) !important;
 }
 .badge-num { display: block; font-size: 2.2rem; font-weight: 900; color: var(--blue-main); }
 .badge-label { font-size: 0.8rem; color: var(--text-sub); }
@@ -264,8 +266,8 @@ ul { list-style: none; }
 .iran-map-section { grid-column: 1 / -1; }
 .iran-map-wrap { padding: 30px; text-align: center; }
 .map-title { font-size: 1rem; font-weight: 700; color: var(--blue-light); margin-bottom: 12px; }
-.iran-map { max-width: 380px; margin: 0 auto; }
-.map-caption { font-size: 0.82rem; color: var(--text-sub); margin-top: 10px; }
+.iran-map { max-width: 480px; width: 100%; height: auto; margin: 0 auto; display: block; }
+.map-caption { font-size: 0.82rem; color: var(--text-sub); margin-top: 14px; }
 
 /* ─── SERVICES ───────────────────────────────────────────────── */
 .services-section {
@@ -315,13 +317,20 @@ ul { list-style: none; }
   background: var(--bg-mid);
 }
 .testi-slider {
-  position: relative; display: flex; align-items: center; gap: 10px;
+  position: relative; display: flex; align-items: center; gap: 14px;
+}
+.testi-viewport {
+  flex: 1;
+  overflow: hidden;
 }
 .testi-track {
-  display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;
-  overflow: hidden; flex: 1;
+  display: flex;
+  gap: 20px;
+  transition: transform 0.5s ease;
 }
 .testi-card {
+  flex: 0 0 calc((100% - 40px) / 3);
+  min-width: 0;
   padding: 28px 24px; border-radius: var(--radius-lg);
   transition: transform 0.3s;
 }
@@ -345,6 +354,15 @@ ul { list-style: none; }
   transition: all 0.25s; flex-shrink: 0;
 }
 .testi-arrow:hover { background: rgba(33,150,243,0.25); }
+.testi-dots {
+  display: flex; justify-content: center; gap: 8px; margin-top: 28px;
+}
+.testi-dot {
+  width: 8px; height: 8px; border-radius: 50%;
+  background: rgba(33,150,243,0.25);
+  cursor: pointer; transition: all 0.25s; border: none; padding: 0;
+}
+.testi-dot.active { background: var(--blue-main); width: 24px; border-radius: 4px; }
 
 /* ─── CTA SECTION ────────────────────────────────────────────── */
 .cta-section { padding: 60px 20px; }
@@ -484,9 +502,8 @@ ul { list-style: none; }
 @media (max-width: 900px) {
   .about-grid { grid-template-columns: 1fr; gap: 40px; }
   .hero-features { grid-template-columns: repeat(2,1fr); }
+  .testi-card { flex-basis: calc((100% - 20px) / 2); }
   .stats-grid { grid-template-columns: repeat(2,1fr); }
-  .testi-track { grid-template-columns: 1fr; }
-  .testi-track .testi-card:nth-child(n+2) { display: none; }
   .contact-grid { grid-template-columns: repeat(2,1fr); }
 }
 
@@ -496,6 +513,7 @@ ul { list-style: none; }
   .services-grid { grid-template-columns: repeat(2,1fr); }
   .hero-title { font-size: 2.8rem; }
   .hero-features { grid-template-columns: repeat(2,1fr); gap: 12px; }
+  .testi-card { flex-basis: 100%; }
   .cta-inner { padding: 40px 20px; }
   .contact-grid { grid-template-columns: 1fr; }
 }
@@ -506,7 +524,7 @@ ul { list-style: none; }
   .stats-grid { grid-template-columns: 1fr 1fr; }
   .footer-grid { grid-template-columns: 1fr; gap: 30px; }
   .float-btn span { display: none; }
-  .float-btn { padding: 14px; }
+  .float-btn { padding: 16px; border-radius: 50%; }
   .hero-btns { flex-direction: column; }
   .btn-primary, .btn-secondary { justify-content: center; }
 }
