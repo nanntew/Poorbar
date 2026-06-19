@@ -141,43 +141,102 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // ─── TESTIMONIAL SLIDER ───────────────────────────────────────
+  const testiViewport = document.querySelector('.testi-viewport');
   const track = document.getElementById('testiTrack');
   const cards = track ? [...track.querySelectorAll('.testi-card')] : [];
+  const dotsContainer = document.getElementById('testiDots');
   let currentTesti = 0;
+  let autoSlideTimer = null;
 
   function getVisibleCount() {
-    return window.innerWidth > 900 ? 3 : window.innerWidth > 600 ? 2 : 1;
+    if (window.innerWidth > 900) return 3;
+    if (window.innerWidth > 600) return 2;
+    return 1;
+  }
+
+  function getMaxIndex() {
+    return Math.max(0, cards.length - getVisibleCount());
+  }
+
+  function buildDots() {
+    if (!dotsContainer) return;
+    dotsContainer.innerHTML = '';
+    const maxIndex = getMaxIndex();
+    for (let i = 0; i <= maxIndex; i++) {
+      const dot = document.createElement('button');
+      dot.classList.add('testi-dot');
+      if (i === currentTesti) dot.classList.add('active');
+      dot.setAttribute('aria-label', 'نمایش نظر ' + (i + 1));
+      dot.addEventListener('click', () => {
+        currentTesti = i;
+        updateSlider();
+        restartAutoSlide();
+      });
+      dotsContainer.appendChild(dot);
+    }
   }
 
   function updateSlider() {
-    const visible = getVisibleCount();
-    cards.forEach((card, i) => {
-      card.style.display = (i >= currentTesti && i < currentTesti + visible) ? '' : 'none';
-    });
+    if (!track || !cards.length) return;
+    const maxIndex = getMaxIndex();
+    currentTesti = Math.min(Math.max(currentTesti, 0), maxIndex);
+
+    const cardWidth = cards[0].getBoundingClientRect().width;
+    const gap = 20;
+    const offset = currentTesti * (cardWidth + gap);
+    track.style.transform = `translateX(${offset}px)`; // RTL flex: positive moves track rightward, revealing next (leftward) cards
+
+    if (dotsContainer) {
+      [...dotsContainer.children].forEach((dot, i) => {
+        dot.classList.toggle('active', i === currentTesti);
+      });
+    }
+  }
+
+  function restartAutoSlide() {
+    if (autoSlideTimer) clearInterval(autoSlideTimer);
+    autoSlideTimer = setInterval(() => {
+      const maxIndex = getMaxIndex();
+      currentTesti = currentTesti >= maxIndex ? 0 : currentTesti + 1;
+      updateSlider();
+    }, 5000);
   }
 
   const testiPrev = document.getElementById('testiPrev');
   const testiNext = document.getElementById('testiNext');
 
-  if (testiPrev && testiNext && cards.length) {
-    updateSlider();
-    testiPrev.addEventListener('click', () => {
-      const visible = getVisibleCount();
-      currentTesti = (currentTesti - 1 + cards.length) % cards.length;
-      updateSlider();
-    });
-    testiNext.addEventListener('click', () => {
-      const visible = getVisibleCount();
-      currentTesti = (currentTesti + 1) % cards.length;
-      updateSlider();
-    });
-    window.addEventListener('resize', updateSlider);
+  if (track && cards.length) {
+    buildDots();
+    // Wait a frame so layout is measured correctly
+    requestAnimationFrame(updateSlider);
 
-    // Auto-slide
-    setInterval(() => {
-      currentTesti = (currentTesti + 1) % cards.length;
-      updateSlider();
-    }, 5000);
+    if (testiPrev) {
+      testiPrev.addEventListener('click', () => {
+        const maxIndex = getMaxIndex();
+        currentTesti = currentTesti <= 0 ? maxIndex : currentTesti - 1;
+        updateSlider();
+        restartAutoSlide();
+      });
+    }
+    if (testiNext) {
+      testiNext.addEventListener('click', () => {
+        const maxIndex = getMaxIndex();
+        currentTesti = currentTesti >= maxIndex ? 0 : currentTesti + 1;
+        updateSlider();
+        restartAutoSlide();
+      });
+    }
+
+    let resizeTimer;
+    window.addEventListener('resize', () => {
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(() => {
+        buildDots();
+        updateSlider();
+      }, 150);
+    });
+
+    restartAutoSlide();
   }
 
   // ─── LIQUID GLASS MOUSE GLOW ──────────────────────────────────
