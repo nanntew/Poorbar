@@ -28,7 +28,9 @@
 
   <!-- Floating Contact Button -->
   <a href="tel:09122272869" class="float-btn" aria-label="تماس فوری">
-    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z" fill="#ffffff"/>
+    </svg>
     <span>تماس فوری</span>
   </a>
 
@@ -157,36 +159,71 @@
         <div class="iran-map-section reveal">
           <div class="iran-map-wrap glass">
             <div class="map-title">پوشش سراسری ایران</div>
-            <svg class="iran-map" viewBox="0 0 400 320" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <!-- Simplified Iran outline -->
-              <path d="M80 80 L120 60 L160 55 L200 50 L240 55 L280 60 L310 75 L330 95 L340 120 L335 145 L320 165 L310 185 L300 210 L280 230 L260 245 L240 255 L220 260 L200 258 L180 255 L160 248 L140 240 L120 228 L100 210 L85 190 L75 165 L70 140 L72 115 L80 80Z"
-                fill="rgba(33,150,243,0.08)" stroke="#2196F3" stroke-width="1.5" stroke-linejoin="round"/>
-              <!-- Cities dots -->
-              <circle cx="195" cy="115" r="6" fill="#2196F3" opacity="0.9">
-                <animate attributeName="r" values="6;9;6" dur="2s" repeatCount="indefinite"/>
+            <svg class="iran-map" viewBox="0 0 500 420" xmlns="http://www.w3.org/2000/svg">
+              <!-- Recognizable Iran outline -->
+              <path d="M 130 55
+                       L 175 40 L 230 35 L 270 32 L 300 40 L 330 38
+                       L 360 48 L 385 60 L 400 80 L 405 100
+                       L 418 110 L 430 125 L 432 145 L 420 160
+                       L 425 178 L 415 195 L 418 215 L 405 230
+                       L 410 250 L 395 268 L 398 288 L 380 305
+                       L 365 320 L 345 330 L 335 350 L 312 360
+                       L 290 355 L 270 365 L 245 360 L 225 368
+                       L 200 358 L 178 362 L 160 345 L 138 340
+                       L 120 320 L 100 310 L 88 290 L 70 278
+                       L 60 258 L 65 235 L 50 215 L 55 192
+                       L 45 170 L 55 148 L 50 125 L 65 105
+                       L 75 85 L 95 70 L 130 55 Z"
+                fill="rgba(33,150,243,0.10)" stroke="#2196F3" stroke-width="2" stroke-linejoin="round"/>
+
+              <!-- Route lines from Tehran (drawn first, under dots) -->
+              <g stroke="#2196F3" stroke-width="1.2" stroke-dasharray="5 4" opacity="0.55">
+                <line x1="245" y1="155" x2="145" y2="155" class="route-line"/>
+                <line x1="245" y1="155" x2="345" y2="120" class="route-line"/>
+                <line x1="245" y1="155" x2="195" y2="245" class="route-line"/>
+                <line x1="245" y1="155" x2="140" y2="270" class="route-line"/>
+                <line x1="245" y1="155" x2="305" y2="245" class="route-line"/>
+                <line x1="245" y1="155" x2="345" y2="230" class="route-line"/>
+                <line x1="245" y1="155" x2="120" y2="195" class="route-line"/>
+              </g>
+
+              <!-- Tehran (origin, pulsing) -->
+              <circle cx="245" cy="155" r="9" fill="#2196F3">
+                <animate attributeName="r" values="9;13;9" dur="2s" repeatCount="indefinite"/>
+                <animate attributeName="opacity" values="1;0.6;1" dur="2s" repeatCount="indefinite"/>
               </circle>
-              <text x="185" y="105" fill="#fff" font-size="9" font-family="Vazirmatn">تهران</text>
-              <circle cx="140" cy="180" r="4" fill="#64B5F6" opacity="0.8"/>
-              <text x="125" y="195" fill="#90CAF9" font-size="8" font-family="Vazirmatn">اصفهان</text>
-              <circle cx="115" cy="210" r="3.5" fill="#64B5F6" opacity="0.7"/>
-              <text x="95" y="225" fill="#90CAF9" font-size="8" font-family="Vazirmatn">شیراز</text>
-              <circle cx="255" cy="105" r="4" fill="#64B5F6" opacity="0.8"/>
-              <text x="260" y="100" fill="#90CAF9" font-size="8" font-family="Vazirmatn">مشهد</text>
-              <circle cx="105" cy="115" r="3.5" fill="#64B5F6" opacity="0.7"/>
-              <text x="85" y="110" fill="#90CAF9" font-size="8" font-family="Vazirmatn">تبریز</text>
-              <circle cx="225" cy="195" r="3.5" fill="#64B5F6" opacity="0.7"/>
-              <text x="228" y="205" fill="#90CAF9" font-size="8" font-family="Vazirmatn">کرمان</text>
-              <circle cx="270" cy="190" r="3" fill="#64B5F6" opacity="0.6"/>
-              <text x="272" y="202" fill="#90CAF9" font-size="8" font-family="Vazirmatn">اهواز</text>
-              <!-- Route lines from Tehran -->
-              <line x1="195" y1="115" x2="140" y2="180" stroke="#2196F3" stroke-width="0.8" stroke-dasharray="4 3" opacity="0.5"/>
-              <line x1="195" y1="115" x2="115" y2="210" stroke="#2196F3" stroke-width="0.8" stroke-dasharray="4 3" opacity="0.4"/>
-              <line x1="195" y1="115" x2="255" y2="105" stroke="#2196F3" stroke-width="0.8" stroke-dasharray="4 3" opacity="0.5"/>
-              <line x1="195" y1="115" x2="105" y2="115" stroke="#2196F3" stroke-width="0.8" stroke-dasharray="4 3" opacity="0.4"/>
-              <line x1="195" y1="115" x2="225" y2="195" stroke="#2196F3" stroke-width="0.8" stroke-dasharray="4 3" opacity="0.4"/>
-              <line x1="195" y1="115" x2="270" y2="190" stroke="#2196F3" stroke-width="0.8" stroke-dasharray="4 3" opacity="0.35"/>
+              <circle cx="245" cy="155" r="4" fill="#fff"/>
+              <text x="225" y="138" fill="#ffffff" font-size="15" font-weight="700" font-family="Vazirmatn">تهران</text>
+
+              <!-- Tabriz -->
+              <circle cx="145" cy="155" r="5" fill="#64B5F6"/>
+              <text x="100" y="148" fill="#90CAF9" font-size="13" font-family="Vazirmatn">تبریز</text>
+
+              <!-- Mashhad -->
+              <circle cx="345" cy="120" r="5" fill="#64B5F6"/>
+              <text x="350" y="113" fill="#90CAF9" font-size="13" font-family="Vazirmatn">مشهد</text>
+
+              <!-- Isfahan -->
+              <circle cx="195" cy="245" r="5" fill="#64B5F6"/>
+              <text x="200" y="240" fill="#90CAF9" font-size="13" font-family="Vazirmatn">اصفهان</text>
+
+              <!-- Shiraz -->
+              <circle cx="140" cy="270" r="5" fill="#64B5F6"/>
+              <text x="90" y="290" fill="#90CAF9" font-size="13" font-family="Vazirmatn">شیراز</text>
+
+              <!-- Kerman -->
+              <circle cx="305" cy="245" r="5" fill="#64B5F6"/>
+              <text x="312" y="240" fill="#90CAF9" font-size="13" font-family="Vazirmatn">کرمان</text>
+
+              <!-- Ahvaz -->
+              <circle cx="120" cy="195" r="5" fill="#64B5F6"/>
+              <text x="55" y="190" fill="#90CAF9" font-size="13" font-family="Vazirmatn">اهواز</text>
+
+              <!-- Bandar Abbas -->
+              <circle cx="345" cy="230" r="5" fill="#64B5F6"/>
+              <text x="350" y="225" fill="#90CAF9" font-size="13" font-family="Vazirmatn">بندرعباس</text>
             </svg>
-            <div class="map-caption">تحویل به تمام استان‌های ایران</div>
+            <div class="map-caption">از تهران به همه‌جا — پوشش حمل بار به تمام شهرهای ایران</div>
           </div>
         </div>
       </div>
@@ -204,7 +241,7 @@
 
         <div class="service-card glass reveal">
           <div class="srv-img-wrap">
-            <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&q=80" alt="باربری شهرستان" class="srv-img"/>
+            <img src="https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?w=400&q=80" alt="باربری شهرستان" class="srv-img"/>
             <div class="srv-overlay"></div>
           </div>
           <div class="srv-icon">🚛</div>
@@ -214,7 +251,7 @@
 
         <div class="service-card glass reveal">
           <div class="srv-img-wrap">
-            <img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=400&q=80" alt="اسباب کشی منزل" class="srv-img"/>
+            <img src="https://images.unsplash.com/photo-1620626011761-996317b8d101?w=400&q=80" alt="اسباب کشی منزل" class="srv-img"/>
             <div class="srv-overlay"></div>
           </div>
           <div class="srv-icon">🏠</div>
@@ -224,7 +261,7 @@
 
         <div class="service-card glass reveal">
           <div class="srv-img-wrap">
-            <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=400&q=80" alt="حمل بار اداری" class="srv-img"/>
+            <img src="https://images.unsplash.com/photo-1565610222536-ef125c59da2e?w=400&q=80" alt="حمل بار اداری" class="srv-img"/>
             <div class="srv-overlay"></div>
           </div>
           <div class="srv-icon">🏢</div>
@@ -292,60 +329,75 @@
         <h2>مشتریان ما چه می‌گویند؟</h2>
       </div>
       <div class="testi-slider reveal">
-        <button class="testi-arrow testi-prev" id="testiPrev">&#8250;</button>
-        <div class="testi-track" id="testiTrack">
+        <button class="testi-arrow testi-prev" id="testiPrev" aria-label="نظر قبلی">&#8250;</button>
+        <div class="testi-viewport">
+          <div class="testi-track" id="testiTrack">
 
-          <div class="testi-card glass">
-            <div class="testi-stars">★★★★★</div>
-            <p>«بسیار عالی و با مسئولیت. بار از تهران به شیراز سالم رسید. برخورد خوب و پیگیری تیم پربار واقعاً ممنونم.»</p>
-            <div class="testi-user">
-              <div class="testi-avatar">س</div>
-              <div>
-                <div class="testi-name">سمیرا احمدی</div>
-                <div class="testi-city">مشتری شیراز</div>
+            <div class="testi-card glass">
+              <div class="testi-stars">★★★★★</div>
+              <p>«بسیار عالی و با مسئولیت. بار از تهران به شیراز سالم رسید. برخورد خوب و پیگیری تیم پربار واقعاً ممنونم.»</p>
+              <div class="testi-user">
+                <div class="testi-avatar">س</div>
+                <div>
+                  <div class="testi-name">سمیرا احمدی</div>
+                  <div class="testi-city">مشتری شیراز</div>
+                </div>
               </div>
             </div>
-          </div>
 
-          <div class="testi-card glass">
-            <div class="testi-stars">★★★★★</div>
-            <p>«بسیار خوش قول و با مسئولیت. بار من بدون هیچ مشکلی و در زمان مقرر به مقصد رسید. تیم حرفه‌ای و پشتیبانی عالی.»</p>
-            <div class="testi-user">
-              <div class="testi-avatar">م</div>
-              <div>
-                <div class="testi-name">مجید رضایی</div>
-                <div class="testi-city">مشتری تهران</div>
+            <div class="testi-card glass">
+              <div class="testi-stars">★★★★★</div>
+              <p>«بسیار خوش قول و با مسئولیت. بار من بدون هیچ مشکلی و در زمان مقرر به مقصد رسید. تیم حرفه‌ای و پشتیبانی عالی.»</p>
+              <div class="testi-user">
+                <div class="testi-avatar">م</div>
+                <div>
+                  <div class="testi-name">مجید رضایی</div>
+                  <div class="testi-city">مشتری تهران</div>
+                </div>
               </div>
             </div>
-          </div>
 
-          <div class="testi-card glass">
-            <div class="testi-stars">★★★★★</div>
-            <p>«چندین بار از خدمات پربار استفاده کردم و همیشه راضی بودم. قیمت مناسب و کیفیت خدمات در سطح عالی.»</p>
-            <div class="testi-user">
-              <div class="testi-avatar">ح</div>
-              <div>
-                <div class="testi-name">حسین کریمی</div>
-                <div class="testi-city">مشتری مشهد</div>
+            <div class="testi-card glass">
+              <div class="testi-stars">★★★★★</div>
+              <p>«چندین بار از خدمات پربار استفاده کردم و همیشه راضی بودم. قیمت مناسب و کیفیت خدمات در سطح عالی.»</p>
+              <div class="testi-user">
+                <div class="testi-avatar">ح</div>
+                <div>
+                  <div class="testi-name">حسین کریمی</div>
+                  <div class="testi-city">مشتری مشهد</div>
+                </div>
               </div>
             </div>
-          </div>
 
-          <div class="testi-card glass">
-            <div class="testi-stars">★★★★★</div>
-            <p>«اثاثیه منزلم را با کمال دقت بسته‌بندی و حمل کردند. حتی یک خراشیدگی کوچک هم نداشت. ممنون از تیم پربار.»</p>
-            <div class="testi-user">
-              <div class="testi-avatar">ز</div>
-              <div>
-                <div class="testi-name">زهرا محمدی</div>
-                <div class="testi-city">مشتری اصفهان</div>
+            <div class="testi-card glass">
+              <div class="testi-stars">★★★★★</div>
+              <p>«اثاثیه منزلم را با کمال دقت بسته‌بندی و حمل کردند. حتی یک خراشیدگی کوچک هم نداشت. ممنون از تیم پربار.»</p>
+              <div class="testi-user">
+                <div class="testi-avatar">ز</div>
+                <div>
+                  <div class="testi-name">زهرا محمدی</div>
+                  <div class="testi-city">مشتری اصفهان</div>
+                </div>
               </div>
             </div>
-          </div>
 
+            <div class="testi-card glass">
+              <div class="testi-stars">★★★★★</div>
+              <p>«حمل بار اداری شرکت‌مان را به‌خوبی و بدون کوچک‌ترین آسیبی انجام دادند. وقت‌شناس و بسیار منظم.»</p>
+              <div class="testi-user">
+                <div class="testi-avatar">ع</div>
+                <div>
+                  <div class="testi-name">علی توکلی</div>
+                  <div class="testi-city">مشتری تبریز</div>
+                </div>
+              </div>
+            </div>
+
+          </div>
         </div>
-        <button class="testi-arrow testi-next" id="testiNext">&#8249;</button>
+        <button class="testi-arrow testi-next" id="testiNext" aria-label="نظر بعدی">&#8249;</button>
       </div>
+      <div class="testi-dots" id="testiDots"></div>
     </div>
   </section>
 
@@ -359,7 +411,7 @@
         <p>همین حالا با کارشناسان ما تماس بگیرید و از مشاوره رایگان بهره‌مند شوید.</p>
         <a href="tel:09122272869" class="btn-primary large">
           <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
-          تماس فوری &nbsp; 09122272869
+          تماس فوری &nbsp; ۰۹۱۲ ۲۲۷ ۲۸۶۹
         </a>
       </div>
     </div>
@@ -398,7 +450,7 @@
           <a href="tel:02155297795" class="contact-phone">۰۲۱ ۵۵۲۹ ۷۷۹۵</a>
           <div class="work-hours">
             <svg viewBox="0 0 24 24" fill="currentColor" width="12"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/></svg>
-            شنبه تا پنج‌شنبه از ۸ صبح تا ۱۰ شب
+            شنبه تا پنج‌شنبه ۸ تا ۱۰ شب
           </div>
         </div>
         <div class="contact-card glass map-card">
@@ -434,6 +486,7 @@
               </div>
             </div>
             <p class="footer-desc">باربری پربار با بیش از ۳۰ سال تجربه، انتخاب اول هزاران مشتری در سراسر ایران برای حمل و نقل ایمن و مطمئن.</p>
+            <div class="footer-no-social">بدون واتساپ — بدون تلگرام — فقط تماس مستقیم</div>
           </div>
           <div class="footer-links-col">
             <h5>دسترسی سریع</h5>
@@ -449,14 +502,14 @@
             <ul>
               <li><a href="#services">باربری شهری</a></li>
               <li><a href="#services">باربری شهرستان</a></li>
-              <li><a href="#services">اساس منزل</a></li>
+              <li><a href="#services">اتاقکشی منزل</a></li>
               <li><a href="#services">حمل بار اداری</a></li>
             </ul>
           </div>
           <div class="footer-links-col">
             <h5>ساعات کاری</h5>
             <ul class="hours-list">
-              <li><svg viewBox="0 0 24 24" fill="#2196F3" width="13"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/></svg> شنبه تا پنج‌شنبه: از ۸ صبح تا ۲۲ شب</li>
+              <li><svg viewBox="0 0 24 24" fill="#2196F3" width="13"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/></svg> شنبه تا پنج‌شنبه: ۸ تا ۲۲</li>
               <li><svg viewBox="0 0 24 24" fill="#2196F3" width="13"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/></svg> جمعه: ۹ تا ۲۱ عصر</li>
               <li><svg viewBox="0 0 24 24" fill="#2196F3" width="13"><path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg> پشتیبانی ۲۴ ساعته</li>
             </ul>
