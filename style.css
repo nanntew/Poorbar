@@ -265,9 +265,41 @@ ul { list-style: none; }
 
 .iran-map-section { grid-column: 1 / -1; }
 .iran-map-wrap { padding: 30px; text-align: center; }
-.map-title { font-size: 1rem; font-weight: 700; color: var(--blue-light); margin-bottom: 12px; }
-.iran-map { max-width: 480px; width: 100%; height: auto; margin: 0 auto; display: block; }
-.map-caption { font-size: 0.82rem; color: var(--text-sub); margin-top: 14px; }
+.map-title { font-size: 1rem; font-weight: 700; color: var(--blue-light); margin-bottom: 18px; }
+.iran-map-img-wrap {
+  position: relative;
+  max-width: 420px;
+  margin: 0 auto;
+}
+.iran-map-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 12px;
+  filter: drop-shadow(0 0 30px rgba(33,150,243,0.25));
+}
+.map-label {
+  position: absolute;
+  transform: translate(50%, -50%);
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: #bbdefb;
+  background: rgba(6,13,26,0.72);
+  padding: 2px 8px;
+  border-radius: 50px;
+  white-space: nowrap;
+  pointer-events: none;
+  border: 1px solid rgba(33,150,243,0.25);
+}
+.map-label-origin {
+  font-size: 0.82rem;
+  font-weight: 800;
+  color: #ffffff;
+  background: rgba(33,150,243,0.85);
+  border: 1px solid rgba(255,255,255,0.4);
+  box-shadow: 0 0 16px rgba(33,150,243,0.7);
+}
+.map-caption { font-size: 0.82rem; color: var(--text-sub); margin-top: 18px; }
 
 /* ─── SERVICES ───────────────────────────────────────────────── */
 .services-section {
@@ -419,6 +451,14 @@ ul { list-style: none; }
   display: flex; align-items: center; gap: 6px;
   font-size: 0.82rem; color: var(--text-sub); margin-top: 12px;
 }
+.map-card {
+  display: block;
+  cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+}
+.map-card:hover {
+  border-color: rgba(33,150,243,0.5);
+}
 .map-card .map-placeholder {
   display: flex; flex-direction: column; align-items: center;
   gap: 12px; padding: 10px 0;
@@ -426,6 +466,19 @@ ul { list-style: none; }
 .map-placeholder p { font-size: 0.85rem; color: var(--text-sub); text-align: center; }
 .map-pin-anim { animation: pinBounce 1.5s ease-in-out infinite; }
 @keyframes pinBounce { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-6px)} }
+.map-open-btn {
+  display: flex; align-items: center; justify-content: center; gap: 7px;
+  margin-top: 18px;
+  background: linear-gradient(135deg, var(--blue-glow), var(--blue-main));
+  color: #fff; font-size: 0.82rem; font-weight: 700;
+  padding: 10px 16px; border-radius: 50px;
+  box-shadow: 0 2px 16px rgba(33,150,243,0.35);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.map-card:hover .map-open-btn {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(33,150,243,0.55);
+}
 
 /* ─── FOOTER ─────────────────────────────────────────────────── */
 .footer {
