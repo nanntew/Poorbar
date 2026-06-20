@@ -20,7 +20,7 @@
   --text-sub:   #90a4ae;
   --border:     rgba(33,150,243,0.18);
   --glow:       0 0 40px rgba(33,150,243,0.25);
-  --font:       'Vazirmatn', sans-serif;
+  --font:       'Vazirmatn', 'Segoe UI', Tahoma, 'Iranian Sans', 'B Nazanin', Arial, sans-serif;
   --radius:     16px;
   --radius-lg:  24px;
 }
@@ -42,6 +42,7 @@ body {
 ::-webkit-scrollbar-thumb { background: var(--blue-glow); border-radius: 3px; }
 
 img { max-width: 100%; display: block; }
+svg { max-width: 100%; }
 a { text-decoration: none; color: inherit; }
 ul { list-style: none; }
 
@@ -52,6 +53,13 @@ ul { list-style: none; }
   -webkit-backdrop-filter: blur(18px) saturate(180%);
   border: 1px solid rgba(33,150,243,0.2);
   border-radius: var(--radius);
+}
+/* Fallback for browsers without backdrop-filter support (older Windows Edge/Chrome):
+   without this, .glass cards render nearly invisible since the base background is very faint. */
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  .glass {
+    background: rgba(18, 30, 50, 0.92);
+  }
 }
 
 /* ─── CONTAINER ─────────────────────────────────────────────── */
@@ -149,7 +157,7 @@ ul { list-style: none; }
   padding: 130px 20px 40px;
   overflow: hidden;
 }
-.hero-bg { position: absolute; inset: 0; z-index: 0; }
+.hero-bg { position: absolute; inset: 0; z-index: 0; background: linear-gradient(135deg, #0a1628 0%, #102544 45%, #0d1f38 100%); }
 .hero-img { width: 100%; height: 100%; object-fit: cover; opacity: 0.35; }
 .hero-overlay {
   position: absolute; inset: 0;
@@ -225,7 +233,8 @@ ul { list-style: none; }
   transition: transform 0.3s, box-shadow 0.3s;
 }
 .feat-card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(33,150,243,0.2); }
-.feat-icon { font-size: 2rem; margin-bottom: 10px; }
+.feat-icon { width: 38px; height: 38px; margin-bottom: 10px; display: flex; align-items: center; justify-content: center; }
+.feat-icon svg { width: 100%; height: 100%; display: block; }
 .feat-title { font-weight: 700; font-size: 0.95rem; margin-bottom: 6px; }
 .feat-desc { font-size: 0.8rem; color: var(--text-sub); }
 
@@ -247,8 +256,8 @@ ul { list-style: none; }
   display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start;
 }
 .about-media { position: relative; }
-.about-img-wrap { position: relative; border-radius: var(--radius-lg); overflow: hidden; }
-.about-img { width: 100%; height: 380px; object-fit: cover; border-radius: var(--radius-lg); }
+.about-img-wrap { position: relative; border-radius: var(--radius-lg); overflow: hidden; background: linear-gradient(135deg, #102544, #0a1628); }
+.about-img { width: 100%; height: 380px; object-fit: cover; border-radius: var(--radius-lg); display: block; }
 .about-badge-overlay {
   position: absolute; bottom: 20px; left: 20px;
   padding: 16px 22px; border-radius: var(--radius);
@@ -261,7 +270,8 @@ ul { list-style: none; }
 .about-text p { color: var(--text-sub); font-size: 0.97rem; margin-bottom: 14px; line-height: 1.8; }
 .about-list { margin: 24px 0 30px; display: flex; flex-direction: column; gap: 12px; }
 .about-list li { display: flex; align-items: center; gap: 10px; font-size: 0.95rem; }
-.check-icon { font-size: 1.1rem; }
+.check-icon { width: 22px; height: 22px; flex-shrink: 0; display: inline-flex; align-items: center; justify-content: center; }
+.check-icon svg { width: 100%; height: 100%; display: block; }
 
 .iran-map-section { grid-column: 1 / -1; }
 .iran-map-wrap { padding: 30px; text-align: center; }
@@ -301,7 +311,8 @@ ul { list-style: none; }
   position: absolute; inset: 0;
   background: linear-gradient(to top, rgba(6,13,26,0.9) 0%, transparent 60%);
 }
-.srv-icon { font-size: 1.8rem; padding: 16px 16px 8px; }
+.srv-icon { width: 34px; height: 34px; padding: 16px 16px 8px; box-sizing: content-box; }
+.srv-icon svg { width: 100%; height: 100%; display: block; }
 .srv-title { font-size: 0.95rem; font-weight: 800; padding: 0 16px 8px; }
 .srv-desc { font-size: 0.8rem; color: #90a4ae; padding: 0 16px 20px; line-height: 1.5; }
 
@@ -318,7 +329,8 @@ ul { list-style: none; }
   transition: transform 0.3s;
 }
 .stat-item:hover { transform: translateY(-4px); }
-.stat-icon { font-size: 2rem; margin-bottom: 10px; }
+.stat-icon { width: 38px; height: 38px; margin: 0 auto 10px; display: flex; align-items: center; justify-content: center; }
+.stat-icon svg { width: 100%; height: 100%; display: block; }
 .stat-num { font-size: clamp(1.8rem, 3vw, 2.5rem); font-weight: 900; color: var(--blue-main); }
 .stat-label { font-size: 0.85rem; color: var(--text-sub); margin-top: 6px; }
 
@@ -403,7 +415,8 @@ ul { list-style: none; }
   transition: transform 0.3s, box-shadow 0.3s;
 }
 .contact-card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(33,150,243,0.15); }
-.contact-icon { font-size: 2rem; margin-bottom: 14px; }
+.contact-icon { width: 38px; height: 38px; margin-bottom: 14px; display: flex; align-items: center; justify-content: center; }
+.contact-icon svg { width: 100%; height: 100%; display: block; }
 .contact-card h4 { font-size: 1rem; font-weight: 700; margin-bottom: 12px; color: var(--blue-light); }
 .contact-card p { font-size: 0.9rem; color: var(--text-sub); line-height: 1.8; }
 .contact-phone {
